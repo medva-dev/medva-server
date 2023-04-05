@@ -1,0 +1,17 @@
+{
+  "PROD - MedVA Zoom Events Webhook - Deploy": {
+    "region": "us-west-1",
+    "functionName": "MedVA_zoom_events",
+    "parameterStore": "ParameterStore_MedVA_PROD",
+    "type": "updateFunctionCode",
+    "handler": "zoom.handler"
+  },
+  "PROD - MedVA Zoom Cron for Users and Meetings - Deploy": {
+    "region": "us-west-1",
+    "functionName": "MedVA_zoom_cron_users_and_meetings",
+    "parameterStore": "ParameterStore_MedVA_PROD",
+    "type": "updateFunctionCode",
+    "handler": "zoom/cron.handler",
+    "timeout": 60
+  }
+}

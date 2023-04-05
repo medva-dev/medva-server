@@ -1,0 +1,4 @@
+invitations
+
+["api",{"id":1,"path":"/api/1.1/invitations/bulk","method":"post","body":{"tagIds":[],"noSendEmail":false,"users":[{"email":"nigelstefanlopez+testUser1@gmail.com","role":"user"}]},"headers":{},"query":{"company":"Yx9IfGP6LILQgHth"}}]
+42["api",{"id":0,"path":"/api/1.1/invitations/exists","method":"get","body":{},"headers":{},"query":{"company":"Yx9IfGP6LILQgHth","email":"nigelstefanlopez+testUser1@gmail.com"}}]

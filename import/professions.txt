@@ -1,0 +1,21 @@
+RN|Registered Nurse
+PTRP|Physical Therapist Registered in the Philippines
+USRN|US Registered Nurse
+MAED|Master of Arts in Education
+RRT|Registered Respiratory Therapist
+DMD|Doctor of Medicine in Dentistry
+RPh|Registered Pharmacist
+CNN|Certified Nephrology Nurse
+CPC|Certified Professional Coder
+RMT|Registered Massage Therapist
+RTRP|Respiratory Therapist Registered in the Philippines
+RM|Registered Midwifery
+SRN|State Registered Nurse
+RPM|Psychometrician
+RPH|Registered Pharmacist
+RCrim|Registered Criminologist
+RXT|Registered X-ray Technologists
+LPT|Licensed Professional Teacher
+RCHT|Registered Chemical Technician
+EMT|Emergency Medical Technician
+MBA|Master of Business Administration

@@ -1,0 +1,49 @@
+service: MedVA-serverless
+frameworkVersion: '3'
+
+provider:
+  name: aws
+  stage: PROD
+  runtime: nodejs16.x
+  region: us-west-1
+  environment:
+    DB_CHARSET: ${file(./helpers/serverless.js):getParameters.DB_CHARSET}
+    DB_CLIENT: ${file(./helpers/serverless.js):getParameters.DB_CLIENT}
+    DB_HOST: ${file(./helpers/serverless.js):getParameters.DB_HOST}
+    DB_MAX_POOL: ${file(./helpers/serverless.js):getParameters.DB_MAX_POOL}
+    DB_MIN_POOL: ${file(./helpers/serverless.js):getParameters.DB_MIN_POOL}
+    DB_NAME: ${file(./helpers/serverless.js):getParameters.DB_NAME}
+    DB_PASS: ${file(./helpers/serverless.js):getParameters.DB_PASS}
+    DB_USER: ${file(./helpers/serverless.js):getParameters.DB_USER}
+    SUPABASE_ANON_KEY: ${file(./helpers/serverless.js):getParameters.SUPABASE_ANON_KEY}
+    SUPABASE_JWT_KEY: ${file(./helpers/serverless.js):getParameters.SUPABASE_JWT_KEY}
+    SUPABASE_SERVICE_ROLE: ${file(./helpers/serverless.js):getParameters.SUPABASE_SERVICE_ROLE}
+    SUPABASE_URL: ${file(./helpers/serverless.js):getParameters.SUPABASE_URL}
+    ZOOM_ACCOUNT_ID: ${file(./helpers/serverless.js):getParameters.ZOOM_ACCOUNT_ID}
+    ZOOM_CLIENT_ID: ${file(./helpers/serverless.js):getParameters.ZOOM_CLIENT_ID}
+    ZOOM_CLIENT_SECRET: ${file(./helpers/serverless.js):getParameters.ZOOM_CLIENT_SECRET}
+    ZOOM_SECRET_TOKEN: ${file(./helpers/serverless.js):getParameters.ZOOM_SECRET_TOKEN}
+    ZOOM_VERIFICATION_TOKEN: ${file(./helpers/serverless.js):getParameters.ZOOM_VERIFICATION_TOKEN}
+
+package:
+  exclude:
+    - .*/**
+
+functions:
+  zoom_cron:
+    handler: zoom/cron.handler
+    timeout: 60
+    memorySize: 256
+    url:
+      cors: true
+    events:
+      - schedule: rate(1 hour)
+  zoom_events:
+    handler: zoom.handler
+    timeout: 30
+    memorySize: 256
+    url:
+      cors: true
+
+custom:
+  parameterStore: 'ParameterStore_MedVA_{stage}'
